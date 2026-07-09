@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
 import {
@@ -25,6 +26,7 @@ import type { SmartGoal } from "@/types/smart-goal";
 type PageState = "loading" | "ready" | "error";
 
 export default function GoalsPage() {
+  const router = useRouter();
   const [pageState, setPageState] = useState<PageState>("loading");
 
   const goals = useSmartGoalStore((s) => s.goals);
@@ -72,8 +74,8 @@ export default function GoalsPage() {
 
   const handleCreate = useCallback(() => {
     selectGoal(null);
-    openForm();
-  }, [openForm, selectGoal]);
+    router.push("/dashboard/goals/new");
+  }, [router, selectGoal]);
 
   const handleEdit = useCallback(
     (goal: SmartGoal) => {

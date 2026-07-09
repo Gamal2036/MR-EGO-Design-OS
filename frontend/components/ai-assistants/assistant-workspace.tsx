@@ -184,8 +184,8 @@ export function AssistantWorkspace() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-ai/10 text-ai absolute left-2 top-1/2 -translate-y-1/2 text-label font-semibold">
               {activeAssistant.initials}
             </div>
-            <input
-              type="text"
+            <textarea
+              id="ai-assistant-composer"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyDown={(e) => {
@@ -195,6 +195,7 @@ export function AssistantWorkspace() {
                 }
               }}
               placeholder={`Ask ${activeAssistant.name} something...`}
+              rows={1}
               className="w-full rounded-xl border border-border bg-surface-2 pl-12 pr-4 py-3 text-body text-primary placeholder:text-tertiary focus:outline-none focus:ring-1 focus:ring-ai/50 transition-shadow"
               aria-label="Message input"
             />

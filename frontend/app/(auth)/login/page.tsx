@@ -65,7 +65,7 @@ export default function LoginPage() {
       <ErrorSummary errors={errors} className="mb-5" />
 
       <AuthForm id={formId} onSubmit={handleSubmit}>
-        <FormField name="email" hasError={false}>
+        <FormField name="email" hasError={errors.includes('Invalid email or password')}>
           <FormLabel>Email</FormLabel>
           <Input
             id={`${formId}-email`}

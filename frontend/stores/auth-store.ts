@@ -10,6 +10,7 @@ export interface MockUser {
 interface AuthState {
   user: MockUser | null;
   isAuthenticated: boolean;
+  registeredUsers: Record<string, string>;
   login: (email: string, password: string) => { success: boolean; error?: string };
   register: (data: { username: string; email: string; password: string }) => { success: boolean; error?: string };
   logout: () => void;
@@ -32,25 +33,36 @@ function clearSessionCookie() {
 }
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const initialRegisteredUsers = {
+  "alex.chen@example.com": "password123",
+};
 
 export const useAuthStore = create<AuthState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       user: null,
       isAuthenticated: false,
+      registeredUsers: initialRegisteredUsers,
 
       login: (email, password) => {
-        if (!emailRegex.test(email)) {
-          return { success: false, error: "Please enter a valid email address" };
+        const normalizedEmail = email.trim().toLowerCase();
+        if (!emailRegex.test(normalizedEmail)) {
+          set({ user: null, isAuthenticated: false });
+          clearSessionCookie();
+          return { success: false, error: "Invalid credentials" };
         }
-        if (password.length < 6) {
-          return { success: false, error: "Password must be at least 6 characters" };
+
+        const storedPassword = get().registeredUsers[normalizedEmail];
+        if (!storedPassword || storedPassword !== password) {
+          set({ user: null, isAuthenticated: false });
+          clearSessionCookie();
+          return { success: false, error: "Invalid credentials" };
         }
 
         const user: MockUser = {
           id: generateId(),
-          email,
-          username: email.split("@")[0] ?? "user",
+          email: normalizedEmail,
+          username: normalizedEmail.split("@")[0] ?? "user",
         };
 
         set({ user, isAuthenticated: true });
@@ -60,7 +72,8 @@ export const useAuthStore = create<AuthState>()(
       },
 
       register: (data) => {
-        if (!emailRegex.test(data.email)) {
+        const normalizedEmail = data.email.trim().toLowerCase();
+        if (!emailRegex.test(normalizedEmail)) {
           return { success: false, error: "Please enter a valid email address" };
         }
         if (data.password.length < 6) {
@@ -69,11 +82,18 @@ export const useAuthStore = create<AuthState>()(
 
         const user: MockUser = {
           id: generateId(),
-          email: data.email,
+          email: normalizedEmail,
           username: data.username,
         };
 
-        set({ user, isAuthenticated: true });
+        set({
+          user,
+          isAuthenticated: true,
+          registeredUsers: {
+            ...get().registeredUsers,
+            [normalizedEmail]: data.password,
+          },
+        });
         setSessionCookie();
 
         return { success: true };
@@ -86,6 +106,11 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: "mr-ego-auth",
+      partialize: (state) => ({
+        user: state.user,
+        isAuthenticated: state.isAuthenticated,
+        registeredUsers: state.registeredUsers,
+      }),
     },
   ),
 );

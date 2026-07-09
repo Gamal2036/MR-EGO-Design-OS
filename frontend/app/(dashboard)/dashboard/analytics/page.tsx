@@ -21,6 +21,7 @@ import {
   AnalyticsLoadingState,
   AnalyticsErrorState,
 } from "@/components/analytics";
+import { showSuccessToast } from "@/components/feedback/toast";
 import { getAnalyticsDataByPeriod } from "@/data/analytics";
 import { useAnalyticsStore } from "@/stores/analytics-store";
 import type { AnalyticsPeriod, QuickAction } from "@/types/analytics";
@@ -59,8 +60,29 @@ export default function AnalyticsPage() {
   }, [setViewState]);
 
   const handleExport = useCallback(() => {
-    // Placeholder for future export integration
-  }, []);
+    const exportData = {
+      period,
+      generatedAt: new Date().toISOString(),
+      summary: getAnalyticsDataByPeriod(period),
+    };
+
+    try {
+      const blob = new Blob([JSON.stringify(exportData, null, 2)], {
+        type: "application/json",
+      });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `mr-ego-analytics-${period}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      showSuccessToast("Analytics export started");
+    } catch {
+      showSuccessToast("Analytics export failed");
+    }
+  }, [period]);
 
   const handleQuickAction = useCallback((action: QuickAction) => {
     // Placeholder for future quick action routing

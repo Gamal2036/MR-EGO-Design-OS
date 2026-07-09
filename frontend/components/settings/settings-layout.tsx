@@ -48,11 +48,18 @@ export function SettingsLayout() {
   } = useSettingsStore();
 
   useEffect(() => {
+    const persistedData = useSettingsStore.getState().data;
+    if (persistedData) {
+      setData(persistedData);
+      return;
+    }
+
     setViewState("loading");
-    const timer = setTimeout(() => {
-      setData(defaultSettingsData);
+    const timer = window.setTimeout(() => {
+      const hydratedData = useSettingsStore.getState().data;
+      setData(hydratedData ?? defaultSettingsData);
     }, 400);
-    return () => clearTimeout(timer);
+    return () => window.clearTimeout(timer);
   }, [setViewState, setData]);
 
   const handleRetry = useCallback(() => {
