@@ -1,0 +1,954 @@
+/* ============================================================================
+   MR:EGO Design OS — Complete Design Token System
+   DP-13 — Enterprise Design Tokens
+   Version: 1.0
+   ============================================================================
+   This file contains ALL design tokens as CSS custom properties.
+   Every visual decision in the product flows from these tokens.
+   No hardcoded colors, spacing, shadows, or visual values anywhere.
+   ============================================================================ */
+
+:root {
+  /* ========================================================================
+     COLOR TOKENS — Light Theme
+     ======================================================================== */
+
+  /* --- Primary (Blue) --- */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #172554;
+
+  /* --- Neutral (Slate) --- */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+
+  /* --- Success (Emerald) --- */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+  --color-success-foreground: #ffffff;
+
+  /* --- Warning (Amber) --- */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-foreground: #ffffff;
+
+  /* --- Danger (Red) --- */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
+  --color-danger-foreground: #ffffff;
+
+  /* --- Info (Sky) --- */
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+  --color-info-200: #bae6fd;
+  --color-info-300: #7dd3fc;
+  --color-info-400: #38bdf8;
+  --color-info-500: #0ea5e9;
+  --color-info-600: #0284c7;
+  --color-info-700: #0369a1;
+  --color-info-800: #075985;
+  --color-info-900: #0c4a6e;
+  --color-info-foreground: #ffffff;
+
+  /* --- AI (Indigo) --- */
+  --color-ai-50: #eef2ff;
+  --color-ai-100: #e0e7ff;
+  --color-ai-200: #c7d2fe;
+  --color-ai-300: #a5b4fc;
+  --color-ai-400: #818cf8;
+  --color-ai-500: #6366f1;
+  --color-ai-600: #4f46e5;
+  --color-ai-700: #4338ca;
+  --color-ai-800: #3730a3;
+  --color-ai-900: #312e81;
+  --color-ai-foreground: #ffffff;
+  --color-ai-glow: rgba(99, 102, 241, 0.15);
+
+  /* --- Job (Teal) --- */
+  --color-job-50: #f0fdfa;
+  --color-job-100: #ccfbf1;
+  --color-job-200: #99f6e4;
+  --color-job-300: #5eead4;
+  --color-job-400: #2dd4bf;
+  --color-job-500: #14b8a6;
+  --color-job-600: #0d9488;
+  --color-job-700: #0f766e;
+  --color-job-800: #115e59;
+  --color-job-900: #134e4a;
+  --color-job-foreground: #ffffff;
+
+  /* --- CV (Green) --- */
+  --color-cv-50: #f0fdf4;
+  --color-cv-100: #dcfce7;
+  --color-cv-200: #bbf7d0;
+  --color-cv-300: #86efac;
+  --color-cv-400: #4ade80;
+  --color-cv-500: #22c55e;
+  --color-cv-600: #16a34a;
+  --color-cv-700: #15803d;
+  --color-cv-800: #166534;
+  --color-cv-900: #14532d;
+  --color-cv-foreground: #ffffff;
+
+  /* --- Analytics (Purple) --- */
+  --color-analytics-50: #faf5ff;
+  --color-analytics-100: #f3e8ff;
+  --color-analytics-200: #e9d5ff;
+  --color-analytics-300: #d8b4fe;
+  --color-analytics-400: #c084fc;
+  --color-analytics-500: #a855f7;
+  --color-analytics-600: #9333ea;
+  --color-analytics-700: #7e22ce;
+  --color-analytics-800: #6b21a8;
+  --color-analytics-900: #581c87;
+  --color-analytics-foreground: #ffffff;
+
+  /* --- Cyan --- */
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  --color-cyan-700: #0e7490;
+  --color-cyan-800: #155e75;
+  --color-cyan-900: #164e63;
+  --color-cyan-foreground: #ffffff;
+  --color-cyan-glow: rgba(6, 182, 212, 0.15);
+
+  /* --- Surface Colors --- */
+  --color-surface-0: var(--color-neutral-50);
+  --color-surface-1: #ffffff;
+  --color-surface-2: var(--color-neutral-100);
+  --color-surface-3: var(--color-neutral-200);
+
+  /* --- Text Colors --- */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-body: var(--color-neutral-800);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-tertiary: var(--color-neutral-500);
+  --color-text-disabled: var(--color-neutral-400);
+  --color-text-inverse: #ffffff;
+  --color-text-link: var(--color-primary-600);
+  --color-text-link-hover: var(--color-primary-700);
+  --color-text-success: var(--color-success-600);
+  --color-text-warning: var(--color-warning-600);
+  --color-text-danger: var(--color-danger-600);
+  --color-text-info: var(--color-info-600);
+  --color-text-ai: var(--color-ai-600);
+  --color-text-on-primary: var(--color-primary-50);
+  --color-text-on-success: #ffffff;
+  --color-text-on-warning: #ffffff;
+  --color-text-on-danger: #ffffff;
+
+  /* --- Border Colors --- */
+  --border-default: var(--color-neutral-300);
+  --border-hover: var(--color-neutral-400);
+  --border-focus: var(--color-primary-500);
+  --border-danger: var(--color-danger-500);
+  --border-success: var(--color-success-500);
+  --border-warning: var(--color-warning-500);
+  --border-info: var(--color-info-500);
+
+  /* --- Notification Colors --- */
+  --notification-info-bg: var(--color-info-100);
+  --notification-info-border: var(--color-info-400);
+  --notification-info-text: var(--color-info-700);
+  --notification-info-icon: var(--color-info-500);
+  --notification-success-bg: var(--color-success-100);
+  --notification-success-border: var(--color-success-400);
+  --notification-success-text: var(--color-success-700);
+  --notification-success-icon: var(--color-success-500);
+  --notification-warning-bg: var(--color-warning-100);
+  --notification-warning-border: var(--color-warning-400);
+  --notification-warning-text: var(--color-warning-700);
+  --notification-warning-icon: var(--color-warning-500);
+  --notification-error-bg: var(--color-danger-100);
+  --notification-error-border: var(--color-danger-400);
+  --notification-error-text: var(--color-danger-700);
+  --notification-error-icon: var(--color-danger-500);
+  --notification-neutral-bg: var(--color-neutral-100);
+  --notification-neutral-border: var(--color-neutral-400);
+  --notification-neutral-text: var(--color-neutral-700);
+  --notification-neutral-icon: var(--color-neutral-500);
+  --notification-ai-bg: var(--color-ai-100);
+  --notification-ai-border: var(--color-ai-400);
+  --notification-ai-text: var(--color-ai-700);
+  --notification-ai-icon: var(--color-ai-500);
+
+  /* --- Chart Colors --- */
+  --chart-1: #3b82f6;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #a855f7;
+  --chart-5: #ef4444;
+  --chart-6: #14b8a6;
+  --chart-7: #f97316;
+  --chart-8: #ec4899;
+
+  /* ========================================================================
+     GLASS TOKENS
+     ======================================================================== */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: 12px;
+  --glass-blur-sm: 4px;
+  --glass-blur-md: 8px;
+  --glass-blur-lg: 12px;
+
+  /* ========================================================================
+     TYPOGRAPHY TOKENS
+     ======================================================================== */
+
+  /* --- Font Families --- */
+  --font-family-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-mono: "JetBrains Mono", "SF Mono", "Fira Code", "Cascadia Code", monospace;
+
+  /* --- Font Sizes & Line Heights --- */
+  --font-size-display: 3rem;
+  --line-height-display: 1.1;
+  --font-weight-display: 700;
+  --letter-spacing-display: -0.02em;
+
+  --font-size-h1: 2.25rem;
+  --line-height-h1: 1.15;
+  --font-weight-h1: 700;
+  --letter-spacing-h1: -0.015em;
+
+  --font-size-h2: 1.75rem;
+  --line-height-h2: 1.2;
+  --font-weight-h2: 650;
+  --letter-spacing-h2: -0.01em;
+
+  --font-size-h3: 1.375rem;
+  --line-height-h3: 1.25;
+  --font-weight-h3: 600;
+  --letter-spacing-h3: -0.005em;
+
+  --font-size-h4: 1.125rem;
+  --line-height-h4: 1.3;
+  --font-weight-h4: 600;
+  --letter-spacing-h4: 0em;
+
+  --font-size-subtitle: 1rem;
+  --line-height-subtitle: 1.4;
+  --font-weight-subtitle: 500;
+  --letter-spacing-subtitle: 0.005em;
+
+  --font-size-body-large: 1rem;
+  --line-height-body-large: 1.6;
+  --font-weight-body-large: 450;
+  --letter-spacing-body-large: 0.01em;
+
+  --font-size-body: 0.9375rem;
+  --line-height-body: 1.6;
+  --font-weight-body: 400;
+  --letter-spacing-body: 0.01em;
+
+  --font-size-body-small: 0.875rem;
+  --line-height-body-small: 1.5;
+  --font-weight-body-small: 400;
+  --letter-spacing-body-small: 0.01em;
+
+  --font-size-caption: 0.8125rem;
+  --line-height-caption: 1.4;
+  --font-weight-caption: 400;
+  --letter-spacing-caption: 0.02em;
+
+  --font-size-label: 0.875rem;
+  --line-height-label: 1.4;
+  --font-weight-label: 500;
+  --letter-spacing-label: 0.01em;
+
+  --font-size-button: 0.875rem;
+  --line-height-button: 1;
+  --font-weight-button: 600;
+  --letter-spacing-button: 0.02em;
+
+  --font-size-code: 0.8125rem;
+  --line-height-code: 1.5;
+  --font-weight-code: 400;
+  --letter-spacing-code: 0em;
+
+  --font-size-overline: 0.75rem;
+  --line-height-overline: 1.2;
+  --font-weight-overline: 600;
+  --letter-spacing-overline: 0.08em;
+
+  --font-size-smallest: 0.6875rem;
+  --line-height-smallest: 1.3;
+  --font-weight-smallest: 400;
+  --letter-spacing-smallest: 0.02em;
+
+  /* ========================================================================
+     SPACING TOKENS — 8px Base Grid
+     ======================================================================== */
+  --space-0: 0px;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --space-6: 20px;
+  --space-7: 24px;
+  --space-8: 32px;
+  --space-9: 40px;
+  --space-10: 48px;
+  --space-11: 64px;
+  --space-12: 80px;
+  --space-13: 96px;
+  --space-14: 128px;
+
+  /* ========================================================================
+     BORDER RADIUS TOKENS
+     ======================================================================== */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ========================================================================
+     SHADOW TOKENS — Light Theme
+     ======================================================================== */
+
+  /* Elevation Scale */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.03);
+  --shadow-2: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-3: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 12px rgba(0, 0, 0, 0.06);
+  --shadow-5: 0 24px 48px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.1);
+
+  /* Semantic Shadows */
+  --shadow-soft: var(--shadow-1);
+  --shadow-medium: var(--shadow-3);
+  --shadow-strong: var(--shadow-5);
+  --shadow-floating: 0 20px 32px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.08);
+  --shadow-glass: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-ai-card: 0 8px 24px rgba(99, 102, 241, 0.1), 0 2px 8px rgba(99, 102, 241, 0.06);
+  --shadow-dialog: var(--shadow-4);
+  --shadow-dropdown: var(--shadow-3);
+  --shadow-modal: var(--shadow-5);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.05);
+  --shadow-focus: 0 0 0 3px rgba(59, 130, 246, 0.15);
+
+  /* ========================================================================
+     Z-INDEX TOKENS
+     ======================================================================== */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-banner: 1200;
+  --z-overlay: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-skip-link: 1600;
+  --z-toast: 1700;
+  --z-tooltip: 1800;
+
+  /* Layer semantic aliases */
+  --layer-base: 0;
+  --layer-dropdown: 1000;
+  --layer-sticky: 1100;
+  --layer-banner: 1200;
+  --layer-overlay: 1300;
+  --layer-modal: 1400;
+  --layer-popover: 1500;
+  --layer-skip-link: 1600;
+  --layer-toast: 1700;
+  --layer-tooltip: 1800;
+
+  /* ========================================================================
+     MOTION / ANIMATION TOKENS
+     ======================================================================== */
+
+  /* Duration */
+  --duration-instant: 50ms;
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-x-slow: 500ms;
+  --duration-xx-slow: 800ms;
+
+  /* Easing Curves */
+  --easing-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-ease-in: cubic-bezier(0.4, 0, 0.68, 0.06);
+  --easing-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Animation Distance */
+  --motion-distance-sm: 4px;
+  --motion-distance-md: 8px;
+  --motion-distance-lg: 16px;
+  --motion-distance-xl: 24px;
+
+  /* Animation Delay */
+  --delay-instant: 0ms;
+  --delay-fast: 50ms;
+  --delay-normal: 100ms;
+  --delay-slow: 200ms;
+  --delay-x-slow: 300ms;
+
+  /* ========================================================================
+     TRANSITION TOKENS
+     ======================================================================== */
+  --transition-fast: all var(--duration-fast) var(--easing-ease-out);
+  --transition-normal: all var(--duration-normal) var(--easing-ease-out);
+  --transition-slow: all var(--duration-slow) var(--easing-ease-out);
+
+  /* ========================================================================
+     RESPONSIVE / BREAKPOINT TOKENS
+     ======================================================================== */
+  --bp-sm: 0px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1600px;
+
+  /* ========================================================================
+     ICON SIZE TOKENS
+     ======================================================================== */
+  --icon-xs: 12px;
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-xl: 32px;
+
+  /* ========================================================================
+     AVATAR SIZE TOKENS
+     ======================================================================== */
+  --avatar-xs: 24px;
+  --avatar-sm: 32px;
+  --avatar-md: 40px;
+  --avatar-lg: 48px;
+  --avatar-xl: 56px;
+  --avatar-2xl: 80px;
+
+  /* ========================================================================
+     BUTTON SIZE TOKENS
+     ======================================================================== */
+  --button-xs: 28px;
+  --button-sm: 32px;
+  --button-md: 40px;
+  --button-lg: 48px;
+  --button-xl: 56px;
+
+  /* ========================================================================
+     INPUT SIZE TOKENS
+     ======================================================================== */
+  --input-sm: 32px;
+  --input-md: 40px;
+  --input-lg: 48px;
+
+  /* ========================================================================
+     CARD SIZE TOKENS
+     ======================================================================== */
+  --card-sm: 240px;
+  --card-md: 320px;
+  --card-lg: 400px;
+
+  /* ========================================================================
+     BORDER WIDTH TOKENS
+     ======================================================================== */
+  --border-width-0: 0px;
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+  --border-width-4: 4px;
+  --border-width-8: 8px;
+
+  /* ========================================================================
+     STROKE TOKENS
+     ======================================================================== */
+  --stroke-1: 1px;
+  --stroke-1-5: 1.5px;
+  --stroke-2: 2px;
+  --stroke-3: 3px;
+
+  /* ========================================================================
+     BLUR TOKENS
+     ======================================================================== */
+  --blur-none: 0;
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 12px;
+  --blur-xl: 24px;
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
+
+  /* ========================================================================
+     OPACITY TOKENS
+     ======================================================================== */
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-15: 0.15;
+  --opacity-20: 0.2;
+  --opacity-25: 0.25;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-75: 0.75;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-95: 0.95;
+  --opacity-100: 1;
+
+  /* ========================================================================
+     FOCUS RING TOKENS
+     ======================================================================== */
+  --ring-width: 2px;
+  --ring-offset: 2px;
+  --ring-color-default: var(--border-focus);
+  --ring-color-light: var(--color-primary-500);
+  --ring-color-dark: var(--color-primary-400);
+
+  /* ========================================================================
+     OUTLINE TOKENS
+     ======================================================================== */
+  --outline-width: 1px;
+  --outline-offset: 2px;
+  --outline-color-default: var(--border-default);
+  --outline-color-light: var(--color-neutral-400);
+  --outline-color-dark: var(--color-neutral-500);
+
+  /* ========================================================================
+     ACCESSIBILITY TOKENS
+     ======================================================================== */
+  --a11y-touch-target: 44px;
+  --a11y-min-contrast: 4.5;
+  --a11y-motion-reduce-duration: 0.01ms;
+
+  /* ========================================================================
+     CONTAINER TOKENS
+     ======================================================================== */
+  --container-max-width-sm: 100%;
+  --container-max-width-md: 720px;
+  --container-max-width-lg: 960px;
+  --container-max-width-xl: 1140px;
+  --container-max-width-2xl: 1440px;
+
+  /* ========================================================================
+     GRID TOKENS
+     ======================================================================== */
+  --grid-columns: 12;
+  --grid-gap: var(--space-5);
+  --grid-gap-sm: var(--space-4);
+  --grid-gap-md: var(--space-5);
+  --grid-gap-lg: var(--space-7);
+
+  /* ========================================================================
+     SHADCN THEME COLORS (HSL) — Light Theme
+     ======================================================================== */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222 47% 11%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 221 83% 53%;
+  --radius: 0.5rem;
+  --chart-1: 221 83% 53%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar-background: 210 40% 98%;
+  --sidebar-foreground: 222 47% 11%;
+  --sidebar-primary: 221 83% 53%;
+  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-accent: 210 40% 96%;
+  --sidebar-accent-foreground: 222 47% 11%;
+  --sidebar-border: 214 32% 91%;
+  --sidebar-ring: 221 83% 53%;
+}
+
+/* ============================================================================
+   DARK THEME OVERRIDES
+   ============================================================================ */
+.dark {
+  /* --- Primary (inverted) --- */
+  --color-primary-50: #172554;
+  --color-primary-100: #1e3a5f;
+  --color-primary-200: #1e40af;
+  --color-primary-300: #2563eb;
+  --color-primary-400: #3b82f6;
+  --color-primary-500: #60a5fa;
+  --color-primary-600: #93c5fd;
+  --color-primary-700: #bfdbfe;
+  --color-primary-800: #dbeafe;
+  --color-primary-900: #eff6ff;
+
+  /* --- Neutral (inverted) --- */
+  --color-neutral-50: #0f172a;
+  --color-neutral-100: #1e293b;
+  --color-neutral-200: #334155;
+  --color-neutral-300: #475569;
+  --color-neutral-400: #64748b;
+  --color-neutral-500: #94a3b8;
+  --color-neutral-600: #cbd5e1;
+  --color-neutral-700: #e2e8f0;
+  --color-neutral-800: #f1f5f9;
+  --color-neutral-900: #f8fafc;
+
+  /* --- Success (inverted) --- */
+  --color-success-50: #022c22;
+  --color-success-100: #064e3b;
+  --color-success-200: #065f46;
+  --color-success-300: #047857;
+  --color-success-400: #059669;
+  --color-success-500: #10b981;
+  --color-success-600: #34d399;
+  --color-success-700: #6ee7b7;
+  --color-success-800: #a7f3d0;
+  --color-success-900: #d1fae5;
+
+  /* --- Warning (inverted) --- */
+  --color-warning-50: #451a03;
+  --color-warning-100: #78350f;
+  --color-warning-200: #92400e;
+  --color-warning-300: #b45309;
+  --color-warning-400: #d97706;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #fbbf24;
+  --color-warning-700: #fcd34d;
+  --color-warning-800: #fde68a;
+  --color-warning-900: #fef3c7;
+
+  /* --- Danger (inverted) --- */
+  --color-danger-50: #450a0a;
+  --color-danger-100: #7f1d1d;
+  --color-danger-200: #991b1b;
+  --color-danger-300: #b91c1c;
+  --color-danger-400: #dc2626;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #f87171;
+  --color-danger-700: #fca5a5;
+  --color-danger-800: #fecaca;
+  --color-danger-900: #fee2e2;
+
+  /* --- Info (inverted) --- */
+  --color-info-50: #082f49;
+  --color-info-100: #0c4a6e;
+  --color-info-200: #075985;
+  --color-info-300: #0369a1;
+  --color-info-400: #0284c7;
+  --color-info-500: #0ea5e9;
+  --color-info-600: #38bdf8;
+  --color-info-700: #7dd3fc;
+  --color-info-800: #bae6fd;
+  --color-info-900: #e0f2fe;
+
+  /* --- AI (inverted) --- */
+  --color-ai-50: #1e1b4b;
+  --color-ai-100: #312e81;
+  --color-ai-200: #3730a3;
+  --color-ai-300: #4338ca;
+  --color-ai-400: #4f46e5;
+  --color-ai-500: #6366f1;
+  --color-ai-600: #818cf8;
+  --color-ai-700: #a5b4fc;
+  --color-ai-800: #c7d2fe;
+  --color-ai-900: #e0e7ff;
+  --color-ai-glow: rgba(99, 102, 241, 0.25);
+
+  /* --- Job (inverted) --- */
+  --color-job-50: #042f2e;
+  --color-job-100: #134e4a;
+  --color-job-200: #115e59;
+  --color-job-300: #0f766e;
+  --color-job-400: #0d9488;
+  --color-job-500: #14b8a6;
+  --color-job-600: #2dd4bf;
+  --color-job-700: #5eead4;
+  --color-job-800: #99f6e4;
+  --color-job-900: #ccfbf1;
+
+  /* --- CV (inverted) --- */
+  --color-cv-50: #052e16;
+  --color-cv-100: #14532d;
+  --color-cv-200: #166534;
+  --color-cv-300: #15803d;
+  --color-cv-400: #16a34a;
+  --color-cv-500: #22c55e;
+  --color-cv-600: #4ade80;
+  --color-cv-700: #86efac;
+  --color-cv-800: #bbf7d0;
+  --color-cv-900: #dcfce7;
+
+  /* --- Analytics (inverted) --- */
+  --color-analytics-50: #2e1065;
+  --color-analytics-100: #581c87;
+  --color-analytics-200: #6b21a8;
+  --color-analytics-300: #7e22ce;
+  --color-analytics-400: #9333ea;
+  --color-analytics-500: #a855f7;
+  --color-analytics-600: #c084fc;
+  --color-analytics-700: #d8b4fe;
+  --color-analytics-800: #e9d5ff;
+  --color-analytics-900: #f3e8ff;
+
+  /* --- Cyan (inverted) --- */
+  --color-cyan-50: #164e63;
+  --color-cyan-100: #155e75;
+  --color-cyan-200: #0e7490;
+  --color-cyan-300: #0891b2;
+  --color-cyan-400: #06b6d4;
+  --color-cyan-500: #22d3ee;
+  --color-cyan-600: #67e8f9;
+  --color-cyan-700: #a5f3fc;
+  --color-cyan-800: #cffafe;
+  --color-cyan-900: #ecfeff;
+  --color-cyan-glow: rgba(34, 211, 238, 0.2);
+
+  /* --- Surface — deep black + graphite gray --- */
+  --color-surface-0: #000000;
+  --color-surface-1: #080808;
+  --color-surface-2: #0f0f0f;
+  --color-surface-3: #1a1a1a;
+
+  /* --- Text --- */
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-body: var(--color-neutral-700);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-tertiary: var(--color-neutral-500);
+  --color-text-disabled: var(--color-neutral-400);
+  --color-text-inverse: var(--color-neutral-50);
+  --color-text-link: var(--color-primary-400);
+  --color-text-link-hover: var(--color-primary-500);
+  --color-text-success: var(--color-success-400);
+  --color-text-warning: var(--color-warning-400);
+  --color-text-danger: var(--color-danger-400);
+  --color-text-info: var(--color-info-400);
+  --color-text-ai: var(--color-ai-400);
+  --color-text-on-primary: var(--color-primary-900);
+  --color-text-on-success: var(--color-success-900);
+  --color-text-on-warning: var(--color-warning-900);
+  --color-text-on-danger: var(--color-danger-900);
+
+  /* --- Borders --- */
+  --border-default: var(--color-neutral-300);
+  --border-hover: var(--color-neutral-400);
+  --border-focus: var(--color-primary-400);
+  --border-danger: var(--color-danger-400);
+  --border-success: var(--color-success-400);
+  --border-warning: var(--color-warning-400);
+  --border-info: var(--color-info-400);
+
+  /* --- Notifications --- */
+  --notification-info-bg: var(--color-info-900);
+  --notification-info-border: var(--color-info-600);
+  --notification-info-text: var(--color-info-300);
+  --notification-info-icon: var(--color-info-400);
+  --notification-success-bg: var(--color-success-900);
+  --notification-success-border: var(--color-success-600);
+  --notification-success-text: var(--color-success-300);
+  --notification-success-icon: var(--color-success-400);
+  --notification-warning-bg: var(--color-warning-900);
+  --notification-warning-border: var(--color-warning-600);
+  --notification-warning-text: var(--color-warning-300);
+  --notification-warning-icon: var(--color-warning-400);
+  --notification-error-bg: var(--color-danger-900);
+  --notification-error-border: var(--color-danger-600);
+  --notification-error-text: var(--color-danger-300);
+  --notification-error-icon: var(--color-danger-400);
+  --notification-neutral-bg: var(--color-neutral-800);
+  --notification-neutral-border: var(--color-neutral-600);
+  --notification-neutral-text: var(--color-neutral-300);
+  --notification-neutral-icon: var(--color-neutral-500);
+  --notification-ai-bg: var(--color-ai-900);
+  --notification-ai-border: var(--color-ai-600);
+  --notification-ai-text: var(--color-ai-300);
+  --notification-ai-icon: var(--color-ai-400);
+
+  /* --- Chart Colors (HSL stays the same, only override if needed) --- */
+
+  /* ========================================================================
+      GLASS — Dark Theme
+      ======================================================================== */
+  --glass-bg: rgba(0, 0, 0, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.06);
+
+  /* ========================================================================
+     SHADOWS — Dark Theme
+     ======================================================================== */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 4px 6px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-3: 0 10px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.15);
+  --shadow-4: 0 16px 24px rgba(0, 0, 0, 0.35), 0 6px 12px rgba(0, 0, 0, 0.2);
+  --shadow-5: 0 24px 48px rgba(0, 0, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.25);
+  --shadow-soft: var(--shadow-1);
+  --shadow-medium: var(--shadow-3);
+  --shadow-strong: var(--shadow-5);
+  --shadow-floating: 0 20px 32px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-glass: 0 4px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-ai-card: 0 8px 24px rgba(99, 102, 241, 0.2), 0 2px 8px rgba(99, 102, 241, 0.1);
+  --shadow-dialog: var(--shadow-4);
+  --shadow-dropdown: var(--shadow-3);
+  --shadow-modal: var(--shadow-5);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
+  --shadow-focus: 0 0 0 3px rgba(96, 165, 250, 0.2);
+
+  /* --- Focus Ring --- */
+  --ring-color-default: var(--border-focus);
+  --ring-color-light: var(--color-primary-500);
+  --ring-color-dark: var(--color-primary-400);
+
+  /* --- Outline --- */
+  --outline-color-default: var(--border-default);
+  --outline-color-light: var(--color-neutral-400);
+  --outline-color-dark: var(--color-neutral-500);
+
+  /* ========================================================================
+     SHADCN THEME COLORS (HSL) — Dark Theme
+     ======================================================================== */
+  --background: 0 0% 0%;
+  --foreground: 210 40% 98%;
+  --card: 0 0% 3%;
+  --card-foreground: 210 40% 98%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 220 70% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 6%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 0 0% 6%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 0 0% 6%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 0 0% 10%;
+  --input: 0 0% 10%;
+  --ring: 220 70% 50%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar-background: 0 0% 0%;
+  --sidebar-foreground: 210 40% 98%;
+  --sidebar-primary: 220 70% 50%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 6%;
+  --sidebar-accent-foreground: 210 40% 98%;
+  --sidebar-border: 0 0% 10%;
+  --sidebar-ring: 220 70% 50%;
+}
+
+/* ============================================================================
+   HIGH CONTRAST MODE OVERRIDES
+   ============================================================================ */
+.high-contrast {
+  --color-text-primary: #000000;
+  --color-text-body: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-text-disabled: #4a4a4a;
+  --border-default: #4a4a4a;
+  --border-hover: #1a1a1a;
+  --border-focus: #2563eb;
+  --ring-width: 3px;
+  --ring-offset: 3px;
+  --a11y-min-contrast: 7;
+}
+
+.dark.high-contrast {
+  --color-text-primary: #ffffff;
+  --color-text-body: #f0f0f0;
+  --color-text-secondary: #d0d0d0;
+  --color-text-disabled: #888888;
+  --border-default: #888888;
+  --border-hover: #cccccc;
+  --border-focus: #60a5fa;
+  --ring-width: 3px;
+  --ring-offset: 3px;
+  --a11y-min-contrast: 7;
+}
+
+/* ============================================================================
+   REDUCED MOTION OVERRIDE
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0.01ms;
+    --duration-fast: 0.01ms;
+    --duration-normal: 0.01ms;
+    --duration-slow: 0.01ms;
+    --duration-x-slow: 0.01ms;
+    --duration-xx-slow: 0.01ms;
+    --delay-instant: 0ms;
+    --delay-fast: 0ms;
+    --delay-normal: 0ms;
+    --delay-slow: 0ms;
+    --delay-x-slow: 0ms;
+  }
+}
+
+.reduced-motion {
+  --duration-instant: 0.01ms;
+  --duration-fast: 0.01ms;
+  --duration-normal: 0.01ms;
+  --duration-slow: 0.01ms;
+  --duration-x-slow: 0.01ms;
+  --duration-xx-slow: 0.01ms;
+  --delay-instant: 0ms;
+  --delay-fast: 0ms;
+  --delay-normal: 0ms;
+  --delay-slow: 0ms;
+  --delay-x-slow: 0ms;
+}

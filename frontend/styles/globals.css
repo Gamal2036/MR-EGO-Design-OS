@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;650;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    font-weight: var(--font-weight-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-sans);
+    color: var(--color-text-primary);
+  }
+
+  h1 { font-size: var(--font-size-h1); line-height: var(--line-height-h1); font-weight: var(--font-weight-h1); letter-spacing: var(--letter-spacing-h1); }
+  h2 { font-size: var(--font-size-h2); line-height: var(--line-height-h2); font-weight: var(--font-weight-h2); letter-spacing: var(--letter-spacing-h2); }
+  h3 { font-size: var(--font-size-h3); line-height: var(--line-height-h3); font-weight: var(--font-weight-h3); letter-spacing: var(--letter-spacing-h3); }
+  h4 { font-size: var(--font-size-h4); line-height: var(--line-height-h4); font-weight: var(--font-weight-h4); letter-spacing: var(--letter-spacing-h4); }
+
+  p { color: var(--color-text-body); }
+  small { font-size: var(--font-size-caption); color: var(--color-text-secondary); }
+
+  a {
+    color: var(--color-text-link);
+    transition: color var(--duration-fast) var(--easing-ease-out);
+  }
+  a:hover { color: var(--color-text-link-hover); }
+
+  code, pre {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-code);
+  }
+
+  ::selection {
+    background-color: var(--color-primary-200);
+    color: var(--color-text-primary);
+  }
+
+  :focus-visible {
+    outline: var(--ring-width) solid var(--ring-color-default);
+    outline-offset: var(--ring-offset);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* --- Typography Utility Classes --- */
+  .text-display { font-size: var(--font-size-display); line-height: var(--line-height-display); font-weight: var(--font-weight-display); letter-spacing: var(--letter-spacing-display); }
+  .text-heading-1 { font-size: var(--font-size-h1); line-height: var(--line-height-h1); font-weight: var(--font-weight-h1); letter-spacing: var(--letter-spacing-h1); }
+  .text-heading-2 { font-size: var(--font-size-h2); line-height: var(--line-height-h2); font-weight: var(--font-weight-h2); letter-spacing: var(--letter-spacing-h2); }
+  .text-heading-3 { font-size: var(--font-size-h3); line-height: var(--line-height-h3); font-weight: var(--font-weight-h3); letter-spacing: var(--letter-spacing-h3); }
+  .text-heading-4 { font-size: var(--font-size-h4); line-height: var(--line-height-h4); font-weight: var(--font-weight-h4); letter-spacing: var(--letter-spacing-h4); }
+  .text-subtitle { font-size: var(--font-size-subtitle); line-height: var(--line-height-subtitle); font-weight: var(--font-weight-subtitle); letter-spacing: var(--letter-spacing-subtitle); }
+  .text-body-large { font-size: var(--font-size-body-large); line-height: var(--line-height-body-large); font-weight: var(--font-weight-body-large); letter-spacing: var(--letter-spacing-body-large); }
+  .text-body { font-size: var(--font-size-body); line-height: var(--line-height-body); font-weight: var(--font-weight-body); letter-spacing: var(--letter-spacing-body); }
+  .text-body-small { font-size: var(--font-size-body-small); line-height: var(--line-height-body-small); font-weight: var(--font-weight-body-small); letter-spacing: var(--letter-spacing-body-small); }
+  .text-caption { font-size: var(--font-size-caption); line-height: var(--line-height-caption); font-weight: var(--font-weight-caption); letter-spacing: var(--letter-spacing-caption); }
+  .text-label { font-size: var(--font-size-label); line-height: var(--line-height-label); font-weight: var(--font-weight-label); letter-spacing: var(--letter-spacing-label); }
+  .text-button { font-size: var(--font-size-button); line-height: var(--line-height-button); font-weight: var(--font-weight-button); letter-spacing: var(--letter-spacing-button); }
+  .text-code { font-size: var(--font-size-code); line-height: var(--line-height-code); font-weight: var(--font-weight-code); letter-spacing: var(--letter-spacing-code); }
+  .text-overline { font-size: var(--font-size-overline); line-height: var(--line-height-overline); font-weight: var(--font-weight-overline); letter-spacing: var(--letter-spacing-overline); }
+  .text-smallest { font-size: var(--font-size-smallest); line-height: var(--line-height-smallest); font-weight: var(--font-weight-smallest); letter-spacing: var(--letter-spacing-smallest); }
+
+  /* --- Elevation / Shadow Classes --- */
+  .elevation-0 { box-shadow: none; }
+  .elevation-1 { box-shadow: var(--shadow-1); }
+  .elevation-2 { box-shadow: var(--shadow-2); }
+  .elevation-3 { box-shadow: var(--shadow-3); }
+  .elevation-4 { box-shadow: var(--shadow-4); }
+  .elevation-5 { box-shadow: var(--shadow-5); }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-strong { box-shadow: var(--shadow-strong); }
+  .shadow-floating { box-shadow: var(--shadow-floating); }
+  .shadow-glass { box-shadow: var(--shadow-glass); }
+  .shadow-ai-card { box-shadow: var(--shadow-ai-card); }
+  .shadow-dialog { box-shadow: var(--shadow-dialog); }
+  .shadow-dropdown { box-shadow: var(--shadow-dropdown); }
+  .shadow-modal { box-shadow: var(--shadow-modal); }
+  .shadow-hover { box-shadow: var(--shadow-hover); }
+  .shadow-focus { box-shadow: var(--shadow-focus); }
+
+  /* --- Glass Utility Classes --- */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-sm {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur-sm));
+    -webkit-backdrop-filter: blur(var(--glass-blur-sm));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-md {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur-md));
+    -webkit-backdrop-filter: blur(var(--glass-blur-md));
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-lg {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur-lg));
+    -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+    border: 1px solid var(--glass-border);
+  }
+
+  /* --- Focus Ring Utility --- */
+  .focus-ring {
+    outline: var(--ring-width) solid var(--ring-color-default);
+    outline-offset: var(--ring-offset);
+  }
+
+  /* --- Text Colors --- */
+  .text-primary { color: var(--color-text-primary); }
+  .text-body-color { color: var(--color-text-body); }
+  .text-secondary { color: var(--color-text-secondary); }
+  .text-tertiary { color: var(--color-text-tertiary); }
+  .text-disabled { color: var(--color-text-disabled); }
+  .text-link { color: var(--color-text-link); }
+  .text-success { color: var(--color-text-success); }
+  .text-warning { color: var(--color-text-warning); }
+  .text-danger { color: var(--color-text-danger); }
+  .text-info { color: var(--color-text-info); }
+
+  /* --- Truncation --- */
+  .truncate-single {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .truncate-multi {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .truncate-multi-2 { -webkit-line-clamp: 2; }
+  .truncate-multi-3 { -webkit-line-clamp: 3; }
+  .truncate-multi-4 { -webkit-line-clamp: 4; }
+
+  /* --- Skeleton Loading --- */
+  .skeleton {
+    background: var(--color-neutral-200);
+    border-radius: var(--radius-sm);
+    animation: skeleton-pulse var(--duration-xx-slow) ease-in-out infinite;
+  }
+
+  .dark .skeleton {
+    background: var(--color-neutral-700);
+  }
+}
